@@ -1,0 +1,63 @@
+<div class="login-container">
+  <div class="left-section">
+    <div class="login-bg"></div>
+  </div>
+  
+  
+  
+  <div class="right-section">
+    <!-- <img src="path/to/logo.png" alt="Logo" class="logo" /> -->
+    <h2>Welcome!</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="form-group">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="loginData.email"
+          required
+          placeholder=" "
+        />
+        <label for="email">Email or Username</label>
+      </div>
+    
+      <div class="form-group">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="loginData.password"
+          required
+          placeholder=" "
+        />
+        <label for="password">Password</label>
+      </div>
+    
+      <div class="forgot-password">
+        <a href="/forgot-password">Forgot Password?</a>
+      </div>
+    
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
+        Sign In
+      </button>
+    </form>
+    
+
+    <div class="alternate-options">
+      <div class="separator">
+        <span>or choose below</span>
+      </div>
+      <div class="options">
+        
+        <button class="btn btn-google">Sign in with Google</button>
+      </div>
+      <p class="sign-up">
+        Don't have an account? 
+        <a href="/forgot-password">Sign up</a>
+      </p>
+    </div>
+    
+  </div>
+</div>
