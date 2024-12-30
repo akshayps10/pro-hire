@@ -1,0 +1,170 @@
+<div class="layout">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <app-header></app-header>
+
+        <!-- Candidate Management Content -->
+        <div class="candidate-management p-4">
+            <h2 class="mb-4">Candidate Management</h2>
+            <button class="btn btn-primary" (click)="openCandidateModal()">+ Add Candidate</button>
+
+            <!-- Candidates Table -->
+            <div class="table-responsive mt-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone No</th>
+                            <th>Applied Position</th>
+                            <th>Is Fresher</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let candidate of candidates; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td>{{ candidate.firstName }}</td>
+                            <td>{{ candidate.lastName }}</td>
+                            <td>{{ candidate.email }}</td>
+                            <td>{{ candidate.phoneNo }}</td>
+                            <td>{{ candidate.appliedPosition }}</td>
+                            <td>{{ candidate.isFresher ? 'Yes' : 'No' }}</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm" (click)="deleteCandidate(i)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Modal -->
+            <div
+                class="modal fade"
+                tabindex="-1"
+                [class.show]="showCandidateModal"
+                style="display: block"
+                *ngIf="showCandidateModal"
+            >
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add New Candidate</h5>
+                            <button type="button" class="btn-close" (click)="closeCandidateModal()"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="candidateForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input
+                                                type="text"
+                                                id="firstName"
+                                                formControlName="firstName"
+                                                class="form-control"
+                                                placeholder="Enter first name"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="lastName" class="form-label">Last Name</label>
+                                            <input
+                                                type="text"
+                                                id="lastName"
+                                                formControlName="lastName"
+                                                class="form-control"
+                                                placeholder="Enter last name"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                formControlName="email"
+                                                class="form-control"
+                                                placeholder="Enter email"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="phoneNo" class="form-label">Phone No</label>
+                                            <input
+                                                type="text"
+                                                id="phoneNo"
+                                                formControlName="phoneNo"
+                                                class="form-control"
+                                                placeholder="Enter phone number"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="appliedPosition" class="form-label">Applied Position</label>
+                                    <select
+                                        id="appliedPosition"
+                                        formControlName="appliedPosition"
+                                        class="form-control"
+                                    >
+                                        <option *ngFor="let job of jobs" [value]="job.title">{{ job.title }}</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <div class="is-fresher">
+                                        <input
+                                            type="checkbox"
+                                            id="isFresher"
+                                            formControlName="isFresher"
+                                            class="form-check-input"
+                                        />
+                                        <label for="isFresher" class="form-check-label">Is Fresher</label>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                <div class="mb-3">
+                                    <label for="profilePicture" class="form-label">Profile Picture</label>
+                                    <input
+                                        type="file"
+                                        id="profilePicture"
+                                        formControlName="profilePicture"
+                                        class="form-control"
+                                        accept="image/*"
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resume" class="form-label">Resume (PDF)</label>
+                                    <input
+                                        type="file"
+                                        id="resume"
+                                        formControlName="resume"
+                                        class="form-control"
+                                        accept=".pdf"
+                                    />
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="closeCandidateModal()">Close</button>
+                            <button type="button" class="btn btn-primary" (click)="createCandidate()">Save Candidate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

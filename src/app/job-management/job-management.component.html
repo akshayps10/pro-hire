@@ -1,0 +1,106 @@
+<div class="layout">
+    <!-- Sidebar -->
+    <app-sidebar></app-sidebar>
+  
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <app-header></app-header>
+  
+      <!-- Job Management Content -->
+      <div class="job-management p-4">
+        <h2 class="mb-4">Job Management</h2>
+        <button class="btn btn-primary" (click)="openJobModal()">+ Create Job</button>
+  
+        <!-- Jobs Table -->
+        <div class="table-responsive mt-4">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Job Title</th>
+                <th>Department</th>
+                <th>Created Date</th>
+                <th>Till Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let job of jobs; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ job.title }}</td>
+                <td>{{ job.department }}</td>
+                <td>{{ job.createdDate | date }}</td>
+                <td>{{ job.tillDate | date }}</td>
+                <td>
+                  <button class="btn btn-danger btn-sm" (click)="deleteJob(i)">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          tabindex="-1"
+          [class.show]="showModal"
+          style="display: block"
+          *ngIf="showModal"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Create New Job</h5>
+                <button type="button" class="btn-close" (click)="closeJobModal()"></button>
+              </div>
+              <div class="modal-body">
+                <form [formGroup]="jobForm">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="jobTitle" class="form-label">Job Title</label>
+                        <input
+                          type="text"
+                          id="jobTitle"
+                          formControlName="title"
+                          class="form-control"
+                          placeholder="Enter job title"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="mb-3">
+                        <label for="department" class="form-label">Department</label>
+                        <input
+                          type="text"
+                          id="department"
+                          formControlName="department"
+                          class="form-control"
+                          placeholder="Enter department"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="tillDate" class="form-label">Till Date</label>
+                    <input
+                      type="date"
+                      id="tillDate"
+                      formControlName="tillDate"
+                      class="form-control"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="closeJobModal()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="createJob()">Save Job</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

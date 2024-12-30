@@ -1,0 +1,285 @@
+/* Layout */
+.layout {
+    display: flex;
+    font-family: "Quicksand", serif;
+}
+
+.main-content {
+    flex: 1;
+    background: #f4f5f7;
+    min-height: 100vh;
+    font-family: "Quicksand", serif;
+}
+
+/* Candidate Management Container */
+.candidate-management {
+    background: #ffffff;
+    margin: 40px;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.candidate-management h2 {
+    font-size: 18px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.candidate-management .btn-primary {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.candidate-management .btn-primary:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Table Styles */
+.table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.table thead {
+    background: #f8f9fc;
+    text-align: left;
+}
+
+.table th {
+    padding: 10px;
+    color: #6c757d;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background: #f1f3f5;
+}
+
+.table td {
+    padding: 10px;
+    color: #495057;
+}
+
+.btn-danger {
+    background-color: #e63946;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
+    transition: background 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #d62828;
+}
+
+/* Modal Container */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    width: 90%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease-out;
+    overflow: hidden;
+    font-family: "Quicksand", serif;
+}
+
+/* Modal Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 15px 20px;
+    color: #ffffff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.modal-header h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.modal-header .btn-close {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-header .btn-close:hover {
+    color: #e0e0e0;
+}
+
+/* Modal Body */
+.modal-body {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #495057;
+    background-color: #f9f9fb;
+}
+
+.modal-body form {
+    display: grid;
+}
+
+.modal-body .row{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Modal Footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding: 15px 20px;
+    background-color: #f1f3f5;
+    border-top: 1px solid #e9ecef;
+    font-family: "Quicksand", serif;
+}
+
+.modal-footer .btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: "Quicksand", serif;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #e9ecef;
+    color: #495057;
+    border: none;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #d6d8db;
+}
+
+.modal-footer .btn-primary {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #ffffff;
+    border: none;
+}
+
+.modal-footer .btn-primary:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.05);
+}
+
+/* Form Fields in Modal */
+.modal-body .form-control {
+    border-radius: 8px;
+    padding: 10px;
+    width: 250px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-body .form-control:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.25);
+}
+
+.modal-body label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.is-fresher {
+    display: inline-flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* Additional Styling for the Candidate Table */
+.candidate-table {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.candidate-table th,
+.candidate-table td {
+    text-align: left;
+    padding: 10px;
+    font-size: 12px;
+    color: #495057;
+}
+
+.candidate-table th {
+    background: #f8f9fc;
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.candidate-table tbody tr {
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.2s ease;
+}
+
+.candidate-table tbody tr:hover {
+    background: #f1f3f5;
+}
+
+.candidate-table .btn-danger {
+    background-color: #e63946;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    border: none;
+}
+
+.candidate-table .btn-danger:hover {
+    background-color: #d62828;
+}

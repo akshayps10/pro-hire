@@ -1,0 +1,80 @@
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Quicksand", serif;
+    
+    /* justify-content: space-between; */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s;
+  }
+  
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    
+  }
+  
+    .logo img {
+        height: 35px;
+    }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 10px 0;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .menu-item i {
+    font-size: 18px;
+  }
+  
+  .menu-item:hover {
+    background-color: #f4f4f4;
+    color: #6c63ff;
+  }
+  
+  .toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px;
+    align-self: flex-end;
+    font-size: 18px;
+  }
+  
+  .toggle-btn i {
+    color: #6c63ff;
+  }
+  
+  .toggle-btn:focus {
+    outline: none;
+  }
+  
