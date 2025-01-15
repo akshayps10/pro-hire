@@ -37,7 +37,7 @@
                             <td>{{ candidate.appliedPosition }}</td>
                             <td>{{ candidate.isFresher ? 'Yes' : 'No' }}</td>
                             <td>
-                                <button class="btn btn-danger btn-sm" (click)="deleteCandidate(i)">Delete</button>
+                                <button class="btn btn-danger btn-sm" (click)="deleteCandidate(candidate.id)">Delete</button>
                             </td>
                         </tr>
                     </tbody>

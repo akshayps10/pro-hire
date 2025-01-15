@@ -1,0 +1,218 @@
+:host {
+    margin: 0;
+    padding: 0;
+    /* font style */
+    font-family: "Quicksand", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f5f5f5;
+    background-image: url('src/assets/images/4w8jxyi56if41.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign-up-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 900px;
+  }
+  
+  
+  .left-section {
+    flex: 1;
+    background-color: #ffffff;
+    /* align-content: center; */
+  }
+  
+  
+  
+  .left-section img {
+    width: 40%;
+    padding: 20px;
+    /* margin-top: -100px; */
+    margin-bottom: 50px;
+  }
+  
+  .sign-up-bg {
+    background-image: url('src/assets/images/5340018.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+  }
+  
+  
+  
+  .right-section {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    color: #000000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  form{
+    margin: 0;
+  }
+  .form-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 350px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px 10px;
+  
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #553cee;
+  }
+  
+  label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-size: 12px;
+    color: #999;
+    background-color: #ffffff;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus + label,
+  .form-control:not(:placeholder-shown) + label {
+    top: -12px;
+    left: 10px;
+    padding: 5px;
+    font-size: 10px;
+    color: #553cee;
+  }
+  
+  button[type="submit"] {
+    background: #5138ee;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background: #1c0899;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  
+  .forgot-password a {
+    color: #553cee;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+  }
+  
+  .forgot-password a:hover {
+    color: #1c0899;
+  }
+  .alternate-options {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #999;
+    font-size: 12px;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+    margin: 0 10px;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .options p {
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  .sign-up{
+    margin: 20px;
+    font-size: 12px;
+  }
+  
+  .options button {
+    padding: 10px 15px;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  .btn-secondary {
+    background: #ddd;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background: #ccc;
+  }
+  
+  .btn-google {
+    background: #db4437;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-google:hover {
+    background: #c33d2f;
+  }
+  

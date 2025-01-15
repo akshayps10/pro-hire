@@ -1,0 +1,60 @@
+<div class="sign-up-container">
+  <!-- Left Section: Logo and Background -->
+  <div class="left-section">
+    <img src="../assets/images/logo-proHire.png" alt="ProHire Logo" />
+    <div class="sign-up-bg"></div>
+  </div>
+
+  <!-- Right Section: Registration Form -->
+  <div class="right-section">
+    <!-- Title -->
+    <h2>Registration</h2>
+
+    <!-- Sign-Up Form -->
+    <form (ngSubmit)="onSubmit()" #signUpForm="ngForm">
+      <!-- Email Input -->
+      <div class="form-group">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          [(ngModel)]="signUpData.email"
+          required
+          placeholder=" " />
+        <label for="email">Email</label>
+      </div>
+
+      <!-- Password Input -->
+      <div class="form-group">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          [(ngModel)]="signUpData.password"
+          required
+          placeholder=" " />
+        <label for="password">Password</label>
+      </div>
+
+      <!-- Name Input -->
+      <div class="form-group">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          [(ngModel)]="signUpData.name"
+          required
+          placeholder=" " />
+        <label for="name">Full Name</label>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid">
+        Sign Up
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -10,6 +10,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { JobManagementComponent } from './job-management/job-management.component';
 import { CandManagementComponent } from './cand-management/cand-management.component';
+import { SignUpComponent } from './sign-Up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import { CandManagementComponent } from './cand-management/cand-management.compo
     HeaderComponent,
     SidebarComponent,
     JobManagementComponent,
-    CandManagementComponent
+    CandManagementComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule , ReactiveFormsModule
+    FormsModule , ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
