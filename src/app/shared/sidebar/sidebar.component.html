@@ -29,14 +29,16 @@
             <span *ngIf="!isCollapsed">Profile</span>
           </a>
         </li> -->
+        
         <li>
-            <a href="#" class="menu-item">
-              <i class="bi bi-gear"></i>
-              <span *ngIf="!isCollapsed">Settings</span>
-            </a>
-          </li>
+          <a href="/settings" class="menu-item" data-bs-toggle="modal" data-bs-target="#adminModal">
+            <i class="bi bi-gear"></i>
+            <span *ngIf="!isCollapsed">Settings</span>
+          </a>
+        </li>
+        
         <li>
-          <a href="#" class="menu-item">
+          <a href="/about" class="menu-item">
             <i class="bi bi-info-circle"></i>
             <span *ngIf="!isCollapsed">About</span>
           </a>

@@ -19,7 +19,7 @@ export class CandManagementComponent implements OnInit {
   candidateForm!: FormGroup;
 
   // Backend API URL
-  apiUrl = 'http://localhost:3000/candidates';
+  apiUrl = 'https://prohirebackend.onrender.com/candidates';
 
   constructor(private fb: FormBuilder, private http: HttpClient) {}
 
@@ -92,19 +92,29 @@ export class CandManagementComponent implements OnInit {
       alert('Please fill in all required fields correctly.');
     }
   }
+// delete
+deleteCandidate(index: number, candidateId: string): void {
+  console.log('Deleting Candidate ID:', candidateId);  // Debugging the ID being passed
 
-  // Delete a candidate by ID
-  deleteCandidate(candidateId: string): void {
-    if (confirm('Are you sure you want to delete this candidate?')) {
-      this.http.delete(`${this.apiUrl}/${candidateId}`).subscribe(
-        () => {
-          alert('Candidate deleted successfully!');
-          this.getCandidates();
-        },
-        (error) => console.error('Error deleting candidate:', error)
-      );
-    }
+  if (!candidateId) {
+    alert('Error: Candidate ID is missing!');
+    return;
   }
+
+  if (confirm(`Are you sure you want to delete this candidate?`)) {
+    this.http.delete(`${this.apiUrl}/${candidateId}`).subscribe(
+      () => {
+        this.candidates.splice(index, 1);  // Remove the candidate from the UI
+        alert('Candidate deleted successfully!');
+      },
+      (error) => {
+        alert('Error deleting candidate');
+        console.error(error);
+      }
+    );
+  }
+}
+
 
   // Get form controls for validation
   get f() {

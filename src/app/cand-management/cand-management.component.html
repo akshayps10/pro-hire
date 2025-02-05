@@ -29,18 +29,20 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let candidate of candidates; let i = index">
-                            <td>{{ i + 1 }}</td>
-                            <td>{{ candidate.firstName }}</td>
-                            <td>{{ candidate.lastName }}</td>
-                            <td>{{ candidate.email }}</td>
-                            <td>{{ candidate.phoneNo }}</td>
-                            <td>{{ candidate.appliedPosition }}</td>
-                            <td>{{ candidate.isFresher ? 'Yes' : 'No' }}</td>
-                            <td>
-                                <button class="btn btn-danger btn-sm" (click)="deleteCandidate(candidate.id)">Delete</button>
-                            </td>
+                          <td>{{ i + 1 }}</td>
+                          <td>{{ candidate.firstName }}</td>
+                          <td>{{ candidate.lastName }}</td>
+                          <td>{{ candidate.email }}</td>
+                          <td>{{ candidate.phoneNo }}</td>
+                          <td>{{ candidate.appliedPosition }}</td>
+                          <td>{{ candidate.isFresher ? 'Yes' : 'No' }}</td>
+                          <td>
+                            <!-- Pass candidate._id to deleteCandidate() -->
+                            <button class="btn btn-danger btn-sm" (click)="deleteCandidate(i, candidate._id)">Delete</button>
+                          </td>
                         </tr>
-                    </tbody>
+                      </tbody>
+                      
                 </table>
             </div>
 

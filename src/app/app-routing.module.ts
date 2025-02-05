@@ -5,7 +5,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { JobManagementComponent } from './job-management/job-management.component';
 import { CandManagementComponent } from './cand-management/cand-management.component';
 import { SignUpComponent } from './sign-Up/sign-up.component';
-
+import { AboutComponent } from './about/about.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -13,8 +14,9 @@ const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'job-management', component: JobManagementComponent },
   { path: 'candidate-management', component: CandManagementComponent },
-  { path: 'sign-up', component: SignUpComponent }
-  // { path: 'home', component: LoginComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'settings', component: SettingsComponent },
 ];
 
 @NgModule({

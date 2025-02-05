@@ -11,6 +11,9 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { JobManagementComponent } from './job-management/job-management.component';
 import { CandManagementComponent } from './cand-management/cand-management.component';
 import { SignUpComponent } from './sign-Up/sign-up.component';
+import { AboutComponent } from './about/about.component';
+import { SettingsComponent } from './settings/settings.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { SignUpComponent } from './sign-Up/sign-up.component';
     SidebarComponent,
     JobManagementComponent,
     CandManagementComponent,
-    SignUpComponent
+    SignUpComponent,
+    AboutComponent,
+    SettingsComponent,
+   
   ],
   imports: [
     BrowserModule,

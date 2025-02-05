@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router'; // Import Router
+import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';  // ✅ Fixed import path
 
 @Component({
   selector: 'app-login',
@@ -13,27 +14,33 @@ export class LoginComponent {
     password: '',
   };
 
-  constructor(private http: HttpClient, private router: Router) {} // Inject Router service
+  constructor(
+    private http: HttpClient, 
+    private router: Router,  
+    private userService: UserService  // ✅ Injected UserService to store user data
+  ) {}
 
   onSubmit() {
-    console.log('Login Data:', this.loginData);
+    console.log('Login Data:', this.loginData); // ✅ Debugging: Log entered credentials
 
-    // Send login request to the backend
-    this.http.post<any>('http://localhost:3000/api/login', this.loginData).subscribe(
+    this.http.post<any>('https://prohirebackend.onrender.com/api/login', this.loginData).subscribe(
       (response) => {
         console.log('Login successful', response);
 
-        // Store the JWT token in localStorage (or sessionStorage)
+        // ✅ Store authentication token in localStorage
         localStorage.setItem('token', response.token);
 
-        // Redirect to the dashboard or home page after successful login
-        this.router.navigate(['/candidate-management']); // Change to your target page
+        // ✅ Store user details in UserService so they persist across components
+        this.userService.setUser(response.user);  
+
+        // ✅ Redirect user to the candidate management page
+        this.router.navigate(['/candidate-management']);
 
         alert('Login Successful!');
       },
       (error) => {
-        console.error('Login failed', error);
-        alert('Login Failed! Please check your credentials.');
+        console.error('Login failed', error); // ✅ Log error for debugging
+        alert('Login Failed! Please check your credentials.'); // ✅ Show user-friendly message
       }
     );
   }

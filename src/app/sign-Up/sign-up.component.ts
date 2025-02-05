@@ -21,7 +21,7 @@ export class SignUpComponent {
 
 
     // Call the backend API to store the sign-up data
-    this.http.post('http://localhost:3000/api/signup', this.signUpData)
+    this.http.post('https://prohirebackend.onrender.com/api/signup', this.signUpData)
       .subscribe(
         (response) => {
           alert('Sign-Up Successful!');
